@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/homepage.style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body onload="myfunction()">
+    <div class="preloader">
+    <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+	<div class="wheel"></div>
+	<div class="hamster">
+		<div class="hamster__body">
+			<div class="hamster__head">
+				<div class="hamster__ear"></div>
+				<div class="hamster__eye"></div>
+				<div class="hamster__nose"></div>
+			</div>
+			<div class="hamster__limb hamster__limb--fr"></div>
+			<div class="hamster__limb hamster__limb--fl"></div>
+			<div class="hamster__limb hamster__limb--br"></div>
+			<div class="hamster__limb hamster__limb--bl"></div>
+			<div class="hamster__tail"></div>
+		</div>
+	</div>
+	<div class="spoke"></div>
+</div>
+</div>
+    <div class="container">
+      <header>
+        <nav class="top">
+          <ul class="contact">
+            <li>
+              <a href=""
+                ><i class="ri-phone-fill" style="margin-top: 15px"></i
+                >+639-12-345-6789</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><i class="ri-mail-fill"></i>volunteerconnect@gmail.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="icons">
+            <li>
+              <a href="#"><img src="fixedMedia/fb.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="fixedMedia/instagram.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="fixedMedia/twitter.png" alt="" /></a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="bottom">
+          <ul>
+            <li><img src="fixedMedia/logo2.png" alt="" class="logo" /></li>
+            <li><a href="#" class="home">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li>
+              <i class="ri-search-line"></i
+              ><input
+                type="search"
+                name=""
+                aria-label="search"
+                id="search"
+                placeholder="        Search..."
+              />
+            </li>
+            <li><a href="Register/index.html" class="register">Register</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="design">
+          <img src="Media/clouds.png" alt="" class="clouds" />
+          <img src="Media/design.png" alt="" class="design" />
+          <img src="Media/arrow.png" alt="" class="arrow" />
+
+          <div class="name">
+            <span class="volunteer">VOLUNTEER</span>
+            <br />
+            <span class="connect">CONNECT</span>
+          </div>
+
+          <div class="motto">
+            <span>Be a life saver</span>
+            <br />
+            <span class="input">Connecting you with meaningful ways to give</span>
+          </div>
+
+          <p style="text-align: center" class="ph">
+            EMERGENCY NEWS IN THE <br />
+            PHILIPPINES
+          </p>
+          <div class="emergency">
+            <img src="Media/Emergency.png" alt="" class="img-eme" />
+          </div>
+          <img src="Media/Slide_Up.png" alt="" class="next" />
+          <img src="Media/Slide_Up1.png" alt="" class="prev" />
+          <ul class="donate">
+           
+            <li><a href="#">Volunteer</a></li>
+          </ul>
+
+          <div class="mail">
+            <div>
+              <span class="subscribe">Subscribe</span>
+              <span class="news">Newsletter</span>
+            </div>
+          </div>
+
+          <div class="signup">
+            <p>Sign up for our monthly Newsletter to get the latest</p>
+            <p>news, volunteer opportunities and updates.</p>
+            
+            <form name="submit-to-google-sheet">
+              <input
+                type="email"
+                name=""
+                id="email"
+                placeholder="Enter your email address"
+              />
+              <button class="send">SEND</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("search")
+          .addEventListener("click", function () {
+            document.querySelector(".ri-search-line").style.display = "none";
+          });
+
+        var pictures = [
+          "Media/Emergency.png",
+          "Media/Emergency2.png",
+          "Media/Emergency3.png",
+        ];
+        var currentIndex = 0;
+        var pictureElement = document.querySelector(".img-eme");
+
+        document.querySelector(".next").addEventListener("click", function () {
+          currentIndex = (currentIndex + 1) % pictures.length; // Increment index, wrap around if necessary
+
+          // Apply fade-out class to current image
+          pictureElement.classList.add("fade-out");
+
+          // Wait for transition to complete and then update the image source
+          setTimeout(function () {
+            pictureElement.src = pictures[currentIndex];
+
+            // Remove fade-out class to trigger fade-in effect
+            pictureElement.classList.remove("fade-out");
+          }, 500); // Adjust this delay to match the transition duration in CSS
+        });
+        document.querySelector(".prev").addEventListener("click", function () {
+          currentIndex = (currentIndex - 1 + pictures.length) % pictures.length; // Increment index, wrap around if necessary
+
+          // Apply fade-out class to current image
+          pictureElement.classList.add("fade-out");
+
+          // Wait for transition to complete and then update the image source
+          setTimeout(function () {
+            pictureElement.src = pictures[currentIndex];
+
+            // Remove fade-out class to trigger fade-in effect
+            pictureElement.classList.remove("fade-out");
+          }, 500); // Adjust this delay to match the transition duration in CSS
+        });
+      });
+    </script>
+
+<script type="text/javascript" src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".input", {
+        strings:["Student's as Volunteer","Unlocking Paths to Purposeful Giving ","Empowering Your Generosity with Purpose ",
+        "Where Giving Finds Purpose."],
+        typeSpeed: 70,
+        backSpeed: 60,
+        loop:true
+    });
+</script>
+
+<script>
+  function myfunction() {
+  // Hide the main webpage initially
+  document.querySelector('.container').style.display = 'none';
+
+  setTimeout(function() {
+    document.querySelector('.preloader').style.display = 'none';
+    // Show the main webpage after the preloader delay
+    document.querySelector('.container').style.display = 'block';
+  }, 5000);
+}
+</script>
+
+
+
+  </body>
+</html>
